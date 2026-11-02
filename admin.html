@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Admin | N.S. Tomar</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script defer src="js/admin.js"></script>
+</head>
+<body>
+  <main class="auth-wrap" id="authView">
+    <form class="auth-card" id="loginForm">
+      <div class="brand">N.S.<span>Tomar.</span></div>
+      <p class="eyebrow">PRIVATE ADMIN AREA</p>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in with your authorized administrator account.</p>
+      <label>Email<input type="email" id="email" autocomplete="username" required></label>
+      <label>Password<input type="password" id="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">Sign in</button>
+      <p class="message" id="authMessage" role="status"></p>
+      <a class="back-link" href="index.html">← Back to portfolio</a>
+    </form>
+  </main>
+
+  <div class="app hidden" id="appView">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">N.S.<span>Tomar.</span></a>
+      <p class="side-label">CONTENT</p>
+      <button class="nav-item active" data-section="projects">▦ Projects</button>
+      <button class="nav-item" data-section="certificates">✧ Certificates</button>
+      <button class="nav-item" data-section="skills">⌘ Skills</button>
+      <button class="nav-item" data-section="resumes">▤ Resumes</button>
+      <button class="nav-item" data-section="profile">⌂ Home / About</button>
+      <button class="nav-item" data-section="education">▣ Education</button>
+      <button class="nav-item" data-section="experience">▤ Experience</button>
+      <button class="nav-item" data-section="contact">✉ Contact</button>
+      <div class="sidebar-bottom">
+        <a href="index.html" target="_blank">↗ View website</a>
+        <button id="logoutBtn" class="nav-item">⇥ Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow">PORTFOLIO MANAGEMENT</p><h1 id="pageTitle">Projects</h1></div>
+        <span class="admin-pill">● Admin</span>
+      </header>
+      <section class="stats" id="stats"></section>
+      <section class="content-panel">
+        <div class="toolbar">
+          <div><h2 id="listTitle">All Projects</h2><p class="muted" id="listHint">Manage your published work and drafts.</p></div>
+          <div><button class="btn secondary hidden" id="messagesBtn" type="button">View message inbox</button> <button class="btn primary" id="addBtn">＋ Add new</button></div>
+        </div>
+        <div id="editor" class="editor hidden"></div>
+        <div id="records" class="records"></div>
+        <p class="message" id="appMessage" role="status"></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+
+
